@@ -2,9 +2,10 @@ import React from 'react';
 import '../App.css';
 import { fadeIn } from 'react-animations'
 import { StyleSheet, css } from 'aphrodite';
-import { Icons } from '../components';
+import { Icons, Container } from '../components';
+import { observer, inject } from 'mobx-react';
 
-export default class Splash extends React.Component {
+class Splash extends React.Component {
 
   state = {
     showIcons: false,
@@ -13,8 +14,8 @@ export default class Splash extends React.Component {
     showButton1: false,
     showButton2: false,
     showWords: false,
-    borderStyle1: '',
-    borderStyle2: '',
+    borderStyle1: '#F5515F',
+    borderStyle2: '#F5515F',
   }
 
   componentDidMount() {
@@ -73,7 +74,7 @@ export default class Splash extends React.Component {
     const { showIcons, showJob, showContact, borderStyle1, borderStyle2, showButton1, showButton2, showWords } = this.state;
 
     return (
-      <div>
+      <Container>
         <div className={css(styles.main)}>
           <p className={css(styles.name)}>Çağatay Kapuağası</p>
           {showJob && <p className={css(styles.job)}>Computer Science</p>}
@@ -86,13 +87,13 @@ export default class Splash extends React.Component {
             <Icons type="facebook" />
           </div>}
 
-          {showButton1 && <div style={{ borderStyle: borderStyle1 }} onClick={this.goToBlog} onMouseLeave={() => this.setState({ borderStyle1: '' })} 
-            onMouseOver={() => this.setState({ borderStyle1: 'solid' })} className={css(styles.button)}>
+          {showButton1 && <div style={{ borderColor: borderStyle1 }} onClick={this.goToBlog} onMouseLeave={() => this.setState({ borderStyle1: '#F5515F' })} 
+            onMouseOver={() => this.setState({ borderStyle1: 'white' })} className={css(styles.button)}>
             <p className={css(styles.buttonText)}>Blog</p>
           </div>}
 
-          {showButton2 && <div style={{ borderStyle: borderStyle2 }} onClick={this.openGitub} onMouseLeave={() => this.setState({ borderStyle2: '' })}
-            onMouseOver={() => this.setState({ borderStyle2: 'solid' })} className={css(styles.button)}>
+          {showButton2 && <div style={{ borderColor: borderStyle2 }} onClick={this.openGitub} onMouseLeave={() => this.setState({ borderStyle2: '#F5515F' })}
+            onMouseOver={() => this.setState({ borderStyle2: 'white' })} className={css(styles.button)}>
             <p className={css(styles.buttonText)}>Github</p>
           </div>}
 
@@ -104,10 +105,12 @@ export default class Splash extends React.Component {
         
         {showContact && <p className={css(styles.contact)}>Contact: cagataykapuagasi@gmail.com</p>}
 
-      </div>
+      </Container>
     );
   }
 }
+
+export default inject('root')(observer(Splash))
 
 
 const styles = StyleSheet.create({
@@ -166,15 +169,14 @@ const styles = StyleSheet.create({
     animationDuration: '2s',
     height: 40,
     width: 110,
-    backgroundColor: 'white',
     justifyContent: 'center',
     alignItems: 'center',
     display: 'flex',
-    borderRadius: 10,
     marginTop: 20,
     backgroundColor: '#F5515F',
     borderWidth: 2,
     borderRadius: 35,
+    borderStyle: 'solid',
   },
   buttonText: {
     fontFamily: 'AvenirNext-MediumItalic',
