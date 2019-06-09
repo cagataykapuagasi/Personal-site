@@ -1,0 +1,9 @@
+export const Config = {
+  apiKey: "ceee306760e32ed0b172bff2baa718ff5bad66a0337bce1ad023e6ce496d8c3de991093ed6b631ba8d54546be1d8ce50",
+  authDomain: "personal-website-7bb11.firebaseapp.com",
+  databaseURL: "https://personal-website-7bb11.firebaseio.com",
+  projectId: "personal-website-7bb11",
+  storageBucket: "",
+  messagingSenderId: "363276644584",
+  appId: "1:363276644584:web:710b42fa0b341401"
+};
