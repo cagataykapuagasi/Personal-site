@@ -34,5 +34,11 @@ const styles = StyleSheet.create({
     cursor: 'pointer',
     justifyContent: 'center',
     alignItems: 'center',
+    webkitTouchCallout: 'none',
+    webkitUserSelect: 'none',
+    khtmlUserSelect: 'none',
+    mozUserSelect: 'none',
+    msUserSelect: 'none',
+    userSelect: 'none',
   }
 })
