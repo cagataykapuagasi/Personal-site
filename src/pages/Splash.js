@@ -2,7 +2,7 @@ import React from 'react';
 import '../App.css';
 import { fadeIn } from 'react-animations'
 import { StyleSheet, css } from 'aphrodite';
-import { Icons, Container } from '../components';
+import { Icons, Container, Button } from '../components';
 import { observer, inject } from 'mobx-react';
 
 class Splash extends React.Component {
@@ -60,7 +60,7 @@ class Splash extends React.Component {
     }, 1000)
   }
 
-  
+
 
   goToBlog = () => {
     this.props.history.push('/blog');
@@ -87,22 +87,22 @@ class Splash extends React.Component {
             <Icons type="facebook" />
           </div>}
 
-          {showButton1 && <div style={{ borderColor: borderStyle1 }} onClick={this.goToBlog} onMouseLeave={() => this.setState({ borderStyle1: '#F5515F' })} 
-            onMouseOver={() => this.setState({ borderStyle1: 'white' })} className={css(styles.button)}>
-            <p className={css(styles.buttonText)}>Blog</p>
-          </div>}
+          {showButton1 && <Button borderColor={borderStyle1} onClick={this.goToBlog} text="Blog" style={styles.button} textStyle={styles.buttonText}
+            onMouseLeave={() => this.setState({ borderStyle1: '#F5515F' })} onMouseOver={() => this.setState({ borderStyle1: 'white' })}
+          />}
 
-          {showButton2 && <div style={{ borderColor: borderStyle2 }} onClick={this.openGitub} onMouseLeave={() => this.setState({ borderStyle2: '#F5515F' })}
-            onMouseOver={() => this.setState({ borderStyle2: 'white' })} className={css(styles.button)}>
-            <p className={css(styles.buttonText)}>Github</p>
-          </div>}
+          {showButton2 && <Button borderColor={borderStyle2} onClick={this.openGitub} text="Github" style={styles.button} textStyle={styles.buttonText}
+            onMouseLeave={() => this.setState({ borderStyle2: '#F5515F' })} onMouseOver={() => this.setState({ borderStyle2: 'white' })}
+          />}
 
-          {showWords && <p className={css(styles.word)}>I have no special talents. I am only passionately curious.<br/>A.Einstein </p>}
+          
+
+          {showWords && <p className={css(styles.word)}>I have no special talents. I am only passionately curious.<br />A.Einstein </p>}
 
 
         </div>
 
-        
+
         {showContact && <p className={css(styles.contact)}>Contact: cagataykapuagasi@gmail.com</p>}
 
       </Container>
@@ -110,7 +110,7 @@ class Splash extends React.Component {
   }
 }
 
-export default inject('root')(observer(Splash))
+export default inject('root')(observer(Splash));
 
 
 const styles = StyleSheet.create({
@@ -192,8 +192,8 @@ const styles = StyleSheet.create({
     animationName: fadeIn,
     animationDuration: '2s',
     position: 'absolute',
-    bottom:10,
-    right:50,
+    bottom: 10,
+    right: 50,
     fontFamily: 'AvenirNext-Italic',
   }
 })
