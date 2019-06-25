@@ -12,6 +12,7 @@ export default class Button extends React.Component {
       <div style={{ borderColor }} onClick={onClick} onMouseLeave={onMouseLeave}
         onMouseOver={onMouseOver} className={css(style ? style: styles.button)}>
         <p className={css(textStyle ? textStyle : styles.buttonText)}>{text}</p>
+        {this.props.children}
       </div>
     )
   }
