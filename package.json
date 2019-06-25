@@ -10,6 +10,7 @@
     "mobx-react": "^6.0.3",
     "react": "^16.8.6",
     "react-animations": "^1.0.0",
+    "react-content-loader": "^4.2.1",
     "react-dom": "^16.8.6",
     "react-icons": "^3.7.0",
     "react-router-dom": "^5.0.0",
