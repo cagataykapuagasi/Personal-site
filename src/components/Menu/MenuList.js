@@ -11,9 +11,13 @@ export default class MenuList extends React.Component {
   }
 
   onClick = (index) => {
+    const { blog } = this.props.root;
+
     this.setState({
       selectedIndex: index,
     })
+
+    blog.changeCurrentData(index);
   }
 
   onMouseOver = (index) => {
@@ -28,7 +32,7 @@ export default class MenuList extends React.Component {
     })
   }
 
-  
+
 
   render() {
     const { selectedIndex, mouseOverIndex, borderStyle } = this.state;
@@ -37,12 +41,7 @@ export default class MenuList extends React.Component {
 
     return (
       <div className={css(styles.main)}>
-
         <p className={css(styles.text)}>Personal Blog</p>
-
-        
-
-
 
         {data && data.map((item, index) => {
           if (selectedIndex === index)
