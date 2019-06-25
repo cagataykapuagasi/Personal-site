@@ -80,11 +80,11 @@ class Splash extends React.Component {
           {showJob && <p className={css(styles.job)}>Computer Science</p>}
 
           {showIcons && <div className={css(styles.icon)} >
-            <Icons type="youtube" />
-            <Icons type="twitter" />
-            <Icons type="instagram" />
-            <Icons type="linkedin" />
-            <Icons type="facebook" />
+            <Icons size={40} type="youtube" />
+            <Icons size={40} type="twitter" />
+            <Icons size={40} type="instagram" />
+            <Icons size={40} type="linkedin" />
+            <Icons size={40} type="facebook" />
           </div>}
 
           {showButton1 && <Button borderColor={borderStyle1} onClick={this.goToBlog} text="Blog" style={styles.button} textStyle={styles.buttonText}
