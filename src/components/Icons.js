@@ -67,11 +67,12 @@ export default class Icons extends React.PureComponent {
   }
 
   Switcher = () => {
-    const { type } = this.props;
+    const { type, size } = this.props;
     const { color } = this.state;
 
     if (type === 'youtube') {
       return <FaYoutube
+      size={size}
       onMouseLeave={this.onMouseLeave}
       onMouseOver={this.onMouseOver}
       onClick={this.onClick} className="Icon"
@@ -79,6 +80,7 @@ export default class Icons extends React.PureComponent {
     }
     else if (type === 'twitter') {
       return <FaTwitter
+      size={size}
       onMouseLeave={this.onMouseLeave}
       onMouseOver={this.onMouseOver}
       onClick={this.onClick} className="Icon"
@@ -86,6 +88,7 @@ export default class Icons extends React.PureComponent {
     }
     else if (type === 'instagram') {
       return <FaInstagram
+      size={size}
       onMouseLeave={this.onMouseLeave}
       onMouseOver={this.onMouseOver}
       onClick={this.onClick} className="Icon"
@@ -93,6 +96,7 @@ export default class Icons extends React.PureComponent {
     }
     else if (type === 'linkedin') {
       return <FaLinkedin
+      size={size}
       onMouseLeave={this.onMouseLeave}
       onMouseOver={this.onMouseOver}
       onClick={this.onClick} className="Icon"
@@ -100,6 +104,7 @@ export default class Icons extends React.PureComponent {
     }
     else {
       return <FaFacebook
+      size={size}
       onMouseLeave={this.onMouseLeave}
       onMouseOver={this.onMouseOver}
       onClick={this.onClick} className="Icon"
