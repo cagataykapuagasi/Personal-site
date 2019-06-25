@@ -8,15 +8,9 @@ export default class Menu extends React.Component {
     color: 'white',
   }
 
-  onClick = () => {
-    this.setState({
-      color: '#F5515F'
-    })
-  }
 
   render() {
     const { text, color, onClick, background, onMouseOver, onMouseLeave } = this.props;
-    //const { color } = this.state;
 
     return (
       <div style={{ background, margin: 50, borderRadius: 50, padding: 10 }} >
