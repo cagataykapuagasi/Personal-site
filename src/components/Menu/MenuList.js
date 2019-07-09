@@ -7,7 +7,6 @@ export default class MenuList extends React.Component {
   state = {
     selectedIndex: 0,
     mouseOverIndex: -1,
-    borderStyle: '#F5515F'
   }
 
   onClick = (item, index) => {
@@ -35,7 +34,7 @@ export default class MenuList extends React.Component {
 
 
   render() {
-    const { selectedIndex, mouseOverIndex, borderStyle } = this.state;
+    const { selectedIndex, mouseOverIndex } = this.state;
     const { data } = this.props;
     let color = 'white', background = 'transparent';
 
@@ -45,7 +44,7 @@ export default class MenuList extends React.Component {
 
         {data && data.map((item, index) => {
           if (selectedIndex === index)
-            color = '#F5515F';
+            color = '#32B4B7';
           else
             color = 'white';
 
@@ -85,28 +84,4 @@ const styles = StyleSheet.create({
     msUserSelect: 'none',
     userSelect: 'none',
   },
-  button: {
-    height: 40,
-    width: 110,
-    justifyContent: 'center',
-    alignItems: 'center',
-    display: 'flex',
-    backgroundColor: '#F5515F',
-    borderWidth: 2,
-    borderRadius: 35,
-    borderStyle: 'solid',
-    position: 'absolute',
-    right: 50,
-    top: 40,
-  },
-  buttonText: {
-    fontFamily: 'AvenirNext-MediumItalic',
-    fontSize: 16,
-    webkitTouchCallout: 'none',
-    webkitUserSelect: 'none',
-    khtmlUserSelect: 'none',
-    mozUserSelect: 'none',
-    msUserSelect: 'none',
-    userSelect: 'none',
-  }
 })
