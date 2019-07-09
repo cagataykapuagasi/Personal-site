@@ -11,11 +11,11 @@ class InPopup extends React.Component {
   state = {
     username: '',
     password: '',
-    borderStyle: '#F5515F',
+    borderStyle: 'transparent',
   }
 
   onMouseLeave = () => {
-    this.setState({ borderStyle: '#F5515F' })
+    this.setState({ borderStyle: 'transparent' })
   }
 
   onMouseOver = () => {

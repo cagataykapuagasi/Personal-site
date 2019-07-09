@@ -13,8 +13,8 @@ class Splash extends React.Component {
     showButton1: false,
     showButton2: false,
     showWords: false,
-    borderStyle1: "#F5515F",
-    borderStyle2: "#F5515F"
+    borderStyle1: "transparent",
+    borderStyle2: "transparent"
   };
 
   componentDidMount() {
@@ -83,7 +83,9 @@ class Splash extends React.Component {
               text="Blog"
               style={styles.button}
               textStyle={styles.buttonText}
-              onMouseLeave={() => this.setState({ borderStyle1: "#F5515F" })}
+              onMouseLeave={() =>
+                this.setState({ borderStyle1: "transparent" })
+              }
               onMouseOver={() => this.setState({ borderStyle1: "white" })}
             />
           )}
@@ -95,7 +97,9 @@ class Splash extends React.Component {
               text="Github"
               style={styles.button}
               textStyle={styles.buttonText}
-              onMouseLeave={() => this.setState({ borderStyle2: "#F5515F" })}
+              onMouseLeave={() =>
+                this.setState({ borderStyle2: "transparent" })
+              }
               onMouseOver={() => this.setState({ borderStyle2: "white" })}
             />
           )}
@@ -181,7 +185,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     display: "flex",
     marginTop: 20,
-    backgroundColor: "#F5515F",
+    backgroundColor: "#0D8B98",
     borderWidth: 2,
     borderRadius: 35,
     borderStyle: "solid"

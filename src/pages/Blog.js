@@ -9,7 +9,7 @@ import { data } from '../util/strings';
 class Blog extends React.Component {
 
   state = {
-    borderStyle: '#F5515F'
+    borderStyle: 'transparent'
   }
 
   componentDidMount() {
@@ -23,7 +23,7 @@ class Blog extends React.Component {
     
     return (
       <Button borderColor={borderStyle} onClick={this.goToBlog} text="Login" style={styles.button} textStyle={styles.buttonText}
-        onMouseLeave={() => this.setState({ borderStyle: '#F5515F' })} onMouseOver={() => this.setState({ borderStyle: 'white' })}
+        onMouseLeave={() => this.setState({ borderStyle: 'transparent' })} onMouseOver={() => this.setState({ borderStyle: 'white' })}
       />
     )
   }
@@ -33,21 +33,21 @@ class Blog extends React.Component {
   
 
   render() {
-    const { currentData } = this.props.root.blog;
+    const { root } = this.props;
 
     return (
       <Container className={css(styles.main)} >
         <Container className={css(styles.area)}>
-          <MenuList root={this.props.root} data={data} />
+          <MenuList root={root} data={data} />
         </Container>
 
         <Popup contentStyle={{ padding: 0, borderWidth: 0, backgroundColor: 'transparent', height: 500, width: 400 }}
           modal trigger={this.popupButton} position="center center">
-          <InPopup history={this.props.history} />
+          <InPopup history={root.history} />
         </Popup>
 
         <Container className={css(styles.area)}>
-          <PostList data={currentData} />
+          <PostList data={root.blog.currentData} />
         </Container>
 
         <Container className={css(styles.footer)}>
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     display: 'flex',
-    backgroundColor: '#F5515F',
+    backgroundColor: '#0D8B98',
     borderWidth: 2,
     borderRadius: 35,
     borderStyle: 'solid',

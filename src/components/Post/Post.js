@@ -7,7 +7,7 @@ export default class Post extends React.Component {
 
   openFull = () => {
     const { index } = this.props;
-    alert(index)
+    alert('coming soon');
   }
 
   render() {
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
     width: '108vh',
     display: 'flex',
     marginTop: 50,
-    backgroundColor: '#F5515F',
+    backgroundColor: '#0D8B98',
     borderRadius: 15,
     flexDirection: 'column',
     cursor: 'pointer',
