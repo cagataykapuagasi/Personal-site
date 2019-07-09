@@ -23,41 +23,24 @@ class Splash extends React.Component {
   }
 
   showItemsLater = () => {
-    setTimeout(() => {
-      this.setState({
-        showJob: true
+    showItemsLater = () => {
+      const data = [
+        {name: 'showJob', ms: 150},
+        {name: 'showIcons', ms: 300},
+        {name: 'showButton1', ms: 450},
+        {name: 'showButton2', ms: 600},
+        {name: 'showWords', ms: 750},
+        {name: 'showContact', ms: 900},
+      ]
+  
+      data.map((item) => {
+        setTimeout(() => {
+          this.setState({
+            [item.name]: true
+          })
+        }, item.ms)
       })
-    }, 150)
-
-    setTimeout(() => {
-      this.setState({
-        showIcons: true
-      })
-    }, 300)
-
-    setTimeout(() => {
-      this.setState({
-        showButton1: true
-      })
-    }, 450)
-
-    setTimeout(() => {
-      this.setState({
-        showButton2: true
-      })
-    }, 600)
-
-    setTimeout(() => {
-      this.setState({
-        showWords: true
-      })
-    }, 750)
-
-    setTimeout(() => {
-      this.setState({
-        showContact: true
-      })
-    }, 1000)
+    }
   }
 
 
