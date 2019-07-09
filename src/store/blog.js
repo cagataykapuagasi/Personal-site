@@ -51,22 +51,16 @@ export default class BlogStore {
     switch (key) {
       case "Dashboard":
         return dashBoard;
-        break;
       case "React":
         return react;
-        break;
       case "React Native":
         return reactNative;
-        break;
       case "C#":
         return cSharp;
-        break;
       case "C":
         return c;
-        break;
       case "Database":
         return database;
-        break;
     }
   };
 
