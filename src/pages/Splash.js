@@ -31,7 +31,7 @@ class Splash extends React.Component {
       { name: "showContact", ms: 900 }
     ];
 
-    data.map(item => {
+    data.forEach(item => {
       setTimeout(() => {
         this.setState({
           [item.name]: true
