@@ -12,8 +12,6 @@ export default class PostList extends React.Component {
   render() {
     const { data } = this.props;
 
-    console.log(data);
-
     if (!data) {
       return (
         <Container className={css(styles.main)}>

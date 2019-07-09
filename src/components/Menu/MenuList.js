@@ -10,14 +10,14 @@ export default class MenuList extends React.Component {
     borderStyle: '#F5515F'
   }
 
-  onClick = (index) => {
+  onClick = (item, index) => {
     const { blog } = this.props.root;
 
     this.setState({
       selectedIndex: index,
     })
 
-    blog.changeCurrentData(index);
+    blog.changeCurrentData(item);
   }
 
   onMouseOver = (index) => {
@@ -57,7 +57,7 @@ export default class MenuList extends React.Component {
           return (
             <Menu onMouseLeave={() => this.onMouseLeave()}
               onMouseOver={() => this.onMouseOver(index)}
-              onClick={() => this.onClick(index)}
+              onClick={() => this.onClick(item, index)}
               background={background} color={color} text={item} />
           )
         })}

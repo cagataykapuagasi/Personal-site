@@ -34,7 +34,6 @@ class Blog extends React.Component {
 
   render() {
     const { currentData } = this.props.root.blog;
-    const { MyLoader } = this;
 
     return (
       <Container className={css(styles.main)} >
@@ -48,7 +47,7 @@ class Blog extends React.Component {
         </Popup>
 
         <Container className={css(styles.area)}>
-          <PostList data={currentData ? currentData : false} />
+          <PostList data={currentData} />
         </Container>
 
         <Container className={css(styles.footer)}>
